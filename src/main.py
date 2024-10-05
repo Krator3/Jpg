@@ -26,7 +26,7 @@ try:
 
     elif "hide" in sys.argv:
         if len(sys.argv) >= 4:
-            print(sys.argv[::])
+            #print(sys.argv[::])
             hide.hide_func(jpg_path=sys.argv[2], hide_path=sys.argv[3])
         else:
             print(error_path)

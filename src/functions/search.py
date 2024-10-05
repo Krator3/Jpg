@@ -6,12 +6,12 @@ import tarfile
 
 # Код для извлечения архива из изображения при помощи Python
 def search_func(jpg_path:str) -> None:
-    print(f"jpg_path: {jpg_path}")
+    #print(f"jpg_path: {jpg_path}")
 
     # Открываем указанный '.jpg' файл в режиме чтения бинарных данных
     with open(jpg_path, 'rb') as f:
         path_to_new_archive = "/".join(jpg_path.split("/")[:-1])
-        print(f"path_to_new_archive: {path_to_new_archive}")
+        #print(f"path_to_new_archive: {path_to_new_archive}")
 
         # Считываем всё содержимое файла в переменную content
         content = f.read()
@@ -35,9 +35,10 @@ def search_func(jpg_path:str) -> None:
         
         # Проверка на тип спрятанного архива и его исправление
         if zipfile.is_zipfile(f"{path_to_new_archive}/hidden.zip"):
-            print("zip")
+            #print("zip")
+            pass
         elif tarfile.is_tarfile(f"{path_to_new_archive}/hidden.zip"):
-            print("tar.gz")
+            #print("tar.gz")
             os.rename(f"{path_to_new_archive}/hidden.zip", f"{path_to_new_archive}/hidden.tar.gz")
         else:
             raise BaseException()
