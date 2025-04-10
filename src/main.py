@@ -8,6 +8,7 @@ from detect import *
 import functions.hide as hide
 import functions.search as search
 
+# Настройка флагов (аргументов) программы
 parser = argparse.ArgumentParser(prog=prog, description=description)
 
 parser.add_argument("hide", nargs="*", help=help_hide)
@@ -17,6 +18,7 @@ parser.add_argument("-v","--version", action="store_true", help=help_version)
 
 args = parser.parse_args()
 
+# Обработка переданных программе данных
 try:
     if args.version:
         print("jpg v1.0.0")
